@@ -24,5 +24,5 @@ jobs:
         run: |
           echo "API key'i secrets üzerinden alıyoruz"
           echo "SUPABASE_API_KEY = '${{ secrets.SUPABASE_API_KEY }}'"
-          sed -i "s|SUPABASE_API_KEY_GITHUB_SECRETS_ILE_GELECEK|${{ secrets.SUPABASE_API_KEY }}|" afad_bot.py
-          python afad_bot.py
+          sed -i "s|SUPABASE_API_KEY_GITHUB_SECRETS_ILE_GELECEK|${{ secrets.SUPABASE_API_KEY }}|" marda.py
+          python marda.py
