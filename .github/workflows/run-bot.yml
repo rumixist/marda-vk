@@ -1,0 +1,28 @@
+name: Marda Saatlik Veri Kaydetme
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Her saat başı UTC
+  workflow_dispatch:
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repo Kopyalanıyor
+        uses: actions/checkout@v3
+
+      - name: Python kurulumu
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Gerekli kütüphaneler
+        run: pip install requests
+
+      - name: Botu çalıştır
+        run: |
+          echo "API key'i secrets üzerinden alıyoruz"
+          echo "SUPABASE_API_KEY = '${{ secrets.SUPABASE_API_KEY }}'"
+          sed -i "s|SUPABASE_API_KEY_GITHUB_SECRETS_ILE_GELECEK|${{ secrets.SUPABASE_API_KEY }}|" afad_bot.py
+          python afad_bot.py
