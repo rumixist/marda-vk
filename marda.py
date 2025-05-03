@@ -2,7 +2,7 @@ import requests
 from datetime import datetime, timedelta
 import uuid
 
-min_lat = 39.0
+min_lat = 40.0
 max_lat = 42.5
 min_lon = 26.0
 max_lon = 30.8
