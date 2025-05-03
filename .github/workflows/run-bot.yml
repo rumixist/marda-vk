@@ -2,7 +2,7 @@ name: Marda Saatlik Veri Kaydetme
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Her saat başı UTC
+    - cron: '0,30 * * * *' # Her saatin 0. ve 30. dakikasında çalışır
   workflow_dispatch:
 
 jobs:
