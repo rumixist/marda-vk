@@ -20,7 +20,7 @@ headers = {
 
 def afad_son_depremleri_cek():
     end_date = datetime.utcnow()
-    start_date = end_date - timedelta(days=1)
+    start_date = end_date - timedelta(hours=6)
     url = (
         "https://deprem.afad.gov.tr/apiv2/event/filter"
         f"?start={start_date.strftime('%Y-%m-%dT%H:%M:%S')}"
